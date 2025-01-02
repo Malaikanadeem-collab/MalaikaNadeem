@@ -2,10 +2,10 @@ name: malaika
 on:
   push:
     branches:
-          - develop
+      - develop
   pull_request:
     branches:
-          - develop
+      - develop
 jobs:
   ci-job:
     runs-on: ubuntu_latest
@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Repository Information
         run:   |
-         echo "Repository name: ${{github.repository}}"
-         echo "Type of event: ${{github.event_name}}"
-         git --version
-         git branch
-         git log
+          echo "Repository name: ${{github.repository}}"
+          echo "Type of event: ${{github.event_name}}"
+          git --version
+          git branch
+          git log
