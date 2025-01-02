@@ -1,0 +1,23 @@
+name: malaika
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+  ci-job:
+    runs-on: ubuntu_latest
+    steps:
+      - name: Welcome steps
+        run: echo "Welcome to github actions"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Repository Information
+        run:   |
+          echo "Repository name: ${{github.repository}}"
+          echo "Type of event: ${{github.event_name}}"
+          git --version
+          git branch
+          git log
